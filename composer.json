@@ -1,0 +1,24 @@
+{
+	"name": "neyltonbenjamim/type",
+	"description": "Tipos adicionais CPF, CNPJ, CEP etc",
+    "authors": [
+		{
+			"name" : "Neylton Benjamim",
+			"email" : "neylton.b@hotmail.com",
+			"role": "Developer" 
+		}
+	],
+	"type": "library",
+	"license":"MIT",
+	"autoload":
+	{
+		"psr-4":{
+            "Type\\":"src/"
+		}
+	},
+	"require":{
+		"php": ">=7.4"
+	}
+
+
+}
