@@ -8,7 +8,7 @@
 
 namespace Cores\Types;
 
-class Cpf
+class CPF
 {
 
     private string $cpf;
