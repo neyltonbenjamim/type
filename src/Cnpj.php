@@ -6,7 +6,7 @@
  * @author neylton
  */
 
-namespace Cores\Types;
+namespace Types;
 
 class Cnpj
 {
