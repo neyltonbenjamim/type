@@ -8,7 +8,7 @@
 
 namespace Type;
 
-class Cpf
+class Cpf implements InterfaceType
 {
 
     private string $cpf;

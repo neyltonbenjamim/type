@@ -8,7 +8,7 @@
 
 namespace Type;
 
-class Cnpj
+class Cnpj implements InterfaceType
 {
 
     private string $cnpj;
