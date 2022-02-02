@@ -22,7 +22,6 @@ class Cpf implements InterfaceType
         $this->base = substr($this->cpf, 0, 9);
         $this->digit = substr($this->cpf, 9,2);
         $this->formatted = str_pad(number_format($this->base, '0', '', '.') . "-{$this->digit}",14,'0',STR_PAD_LEFT);
-        var_dump($this);
         $this->check();
     }
 
@@ -53,7 +52,6 @@ class Cpf implements InterfaceType
             $digit += $cpf[$i] * $base[$i];
         }
         $digit = ($digit % 11) < 2 ? 0 : 11 - ($digit % 11);
-        echo $digit;
         return $digit == $this->digit[$index] ? $digit : throw new \Exception(($index+1) . '° digito incorreto');
     }
 
