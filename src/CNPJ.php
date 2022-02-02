@@ -8,7 +8,7 @@
 
 namespace Cores\Types;
 
-class CNPJ
+class Cnpj
 {
 
     private string $cnpj;
