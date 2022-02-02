@@ -6,7 +6,7 @@
  * @author neylton
  */
 
-namespace Types;
+namespace Type;
 
 class Cpf
 {
