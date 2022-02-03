@@ -13,7 +13,14 @@
 	"autoload":
 	{
 		"psr-4":{
-            "Type\\":"src/"
+            "Type\\": [
+				"src/Type",
+				"tests/Type"
+			],
+			"Type\\Exemplos\\": [
+				"src/Type/Exemplos",
+				"tests/Type/Exemplos"
+			]
 		}
 	},
 	"require":{
