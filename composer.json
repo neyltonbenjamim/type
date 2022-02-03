@@ -17,9 +17,9 @@
 				"src/Type",
 				"tests/Type"
 			],
-			"Type\\Exemplos\\": [
-				"src/Type/Exemplos",
-				"tests/Type/Exemplos"
+			"Exemplos\\": [
+				"src/Exemplos",
+				"tests/Exemplos"
 			]
 		}
 	},
