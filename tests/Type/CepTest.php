@@ -3,7 +3,7 @@ namespace Type;
 
 require "./vendor/autoload.php";
 
-use PHPUnit\Framework\testCase;
+use Type\TestCase;
 class CepTest extends TestCase
 {
     public function testCep()
