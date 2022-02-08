@@ -6,14 +6,8 @@ require "./vendor/autoload.php";
 
 use PHPUnit\Framework\testCase as PHPUnit;
 
-class TestCase  extends PHPUnit
+class TestCase extends PHPUnit
 {
-
-    public function ver()
-    {
-
-    }
-
     protected function setUp(): void
     {
         parent::setUp();
