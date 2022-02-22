@@ -67,4 +67,14 @@ class BaseStringTest extends TestCase
         );
     }
 
+    public function testStringFormatted()
+    {
+        $string = new Nome(' neylton benjamim dos anjos ');
+
+        $this->assertEquals(
+            'Neylton Benjamim Dos Anjos',
+             $string->formatted()
+        );
+    }
+
 }

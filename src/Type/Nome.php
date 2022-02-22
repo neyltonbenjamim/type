@@ -21,6 +21,7 @@ class Nome extends BaseString implements InterfaceType
     {
         parent::__construct($nome);
         $this->nome = $this->getString();
+        $this->formatted = $this->ucwords();
     }
 
     public function __toString()
