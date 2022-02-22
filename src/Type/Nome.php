@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CNPJ [TIPO]
  * Description
@@ -7,6 +8,8 @@
  */
 
 namespace Type;
+
+use LengthException;
 
 class Nome extends BaseString implements InterfaceType
 {
@@ -17,9 +20,10 @@ class Nome extends BaseString implements InterfaceType
     const MAX_LENGTH = 60;
     const MIN_LENGHT = 2;
 
-    public function __construct(string $nome)
+    public function __construct(string $nome, $transform = null)
     {
-        parent::__construct($nome);
+        parent::__construct($nome, $transform);
+        $this->isValidLength();
         $this->nome = $this->getString();
         $this->formatted = $this->ucwords();
     }
@@ -37,5 +41,12 @@ class Nome extends BaseString implements InterfaceType
     public function formatted(): string
     {
         return $this->formatted;
+    }
+    
+    private function isValidLength()
+    {
+        if($this->length() > self::MAX_LENGTH || $this->length() < self::MIN_LENGHT){
+            throw new LengthException();
+        }
     }
 }

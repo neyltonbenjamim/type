@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CNPJ [TIPO]
  * Description
@@ -17,10 +18,22 @@ abstract class BaseString
 {
     private string $string;
 
-    public function __construct(string $string)
+    const UPPER = 'upper';
+    const LOWER = 'lower';
+    const UC_WORDS = 'ucwords';
+    const UC_FIRST = 'ucfirst';
+
+    public function __construct(string $string, $transform = null)
     {
         $this->string = trim($string);
-        
+        $this->transform($transform);
+    }
+
+    private function transform($transform)
+    {
+        if(method_exists($this, $transform)){
+            $this->string = $this->$transform();
+        }
     }
 
     public function getString()
@@ -42,22 +55,20 @@ abstract class BaseString
     {
         return mb_strlen($this->string);
     }
-    
+
     public function ucwords()
     {
         $words = explode(" ", $this->string);
-        $words = array_map(array($this,'ucfirst'),$words);
-        return implode(' ',$words);
+        $words = array_map(array($this, 'ucfirst'), $words);
+        return implode(' ', $words);
     }
 
     public function ucfirst($string = null)
     {
-        $string = $string??$this->string;
+        $string = $string ?? $this->string;
         $first = mb_strtoupper(mb_substr($string, 0, 1));
         $complete = mb_strtolower(mb_substr($string, 1, mb_strlen($string)));
-        
-        return $first.$complete;
+
+        return $first . $complete;
     }
-
-
 }
