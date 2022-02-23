@@ -49,7 +49,6 @@ abstract class BaseString
     public function lower()
     {
         return mb_convert_case($this->string, MB_CASE_LOWER, 'UTF-8');
-        return mb_strtolower($this->string);
     }
 
     public function length()
