@@ -7,18 +7,20 @@ use Type\Nome;
 use Type\TestCase;
 class BaseStringTest extends TestCase
 {
+    //https://www.invertexto.com/contador-caracteres
+
     private $string;
 
     public function setUp(): void
     {
-        $this->string = new Nome(' neylton Benjamim dos anjos ');
+        $this->string = new Nome(' neylton Benjamim dos anjos éstá ');
         parent::setUp();
     }
 
     public function testString()
     {
         $this->assertEquals(
-            'neylton Benjamim dos anjos',
+            'neylton Benjamim dos anjos éstá',
             $this->string->getString()
         );
     }
@@ -26,7 +28,7 @@ class BaseStringTest extends TestCase
     public function testStringUpper()
     {   
         $this->assertEquals(
-            'NEYLTON BENJAMIM DOS ANJOS',
+            'NEYLTON BENJAMIM DOS ANJOS ÉSTÁ',
             $this->string->upper()
         );
     }
@@ -34,7 +36,7 @@ class BaseStringTest extends TestCase
     public function testStringLower()
     {
         $this->assertEquals(
-            'neylton benjamim dos anjos',
+            'neylton benjamim dos anjos éstá',
             $this->string->lower()
         );
     }
@@ -42,7 +44,7 @@ class BaseStringTest extends TestCase
     public function testStringLength()
     {
         $this->assertEquals(
-            26,
+            31,
             $this->string->length()
         );
     }
@@ -50,7 +52,7 @@ class BaseStringTest extends TestCase
     public function testStringUcfirst()
     {
         $this->assertEquals(
-            'Neylton benjamim dos anjos',
+            'Neylton benjamim dos anjos éstá',
             $this->string->ucfirst()
         );
     }
@@ -58,18 +60,16 @@ class BaseStringTest extends TestCase
     public function testStringUcWord()
     {
         $this->assertEquals(
-            'Neylton Benjamim Dos Anjos',
+            'Neylton Benjamim Dos Anjos Éstá',
             $this->string->ucwords()
         );
     }
 
     public function testStringFormatted()
     {
-        $string = new Nome(' neylton benjamim dos anjos ');
-
         $this->assertEquals(
-            'Neylton Benjamim Dos Anjos',
-             $string->formatted()
+            'Neylton Benjamim Dos Anjos Éstá',
+             $this->string->formatted()
         );
     }
 

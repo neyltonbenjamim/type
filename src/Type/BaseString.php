@@ -43,11 +43,12 @@ abstract class BaseString
 
     public function upper()
     {
-        return mb_strtoupper($this->string);
+        return mb_convert_case($this->string, MB_CASE_UPPER, 'UTF-8');
     }
 
     public function lower()
     {
+        return mb_convert_case($this->string, MB_CASE_LOWER, 'UTF-8');
         return mb_strtolower($this->string);
     }
 
@@ -58,9 +59,7 @@ abstract class BaseString
 
     public function ucwords()
     {
-        $words = explode(" ", $this->string);
-        $words = array_map(array($this, 'ucfirst'), $words);
-        return implode(' ', $words);
+        return mb_convert_case($this->string, MB_CASE_TITLE, 'UTF-8');
     }
 
     public function ucfirst($string = null)
